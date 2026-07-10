@@ -1,10 +1,12 @@
 # nodejs-terraform
 
-https://medium.com/@pavankalyanmeda5779/deploying-a-node-js-app-on-aws-ecs-fargate-with-terraform-and-github-actions-b6463d4a07fe
+## Login to AWS with access key and secret
 
-Create AWS IAM user with CLI and AdministratorAccess rights.
+Create an AWS IAM user with CLI and AdministratorAccess rights.
 
-Create S3 bucket for Terraform:
+aws configure
+
+##  Create an S3 bucket for Terraform state storage
 
 aws s3api create-bucket  \
   --bucket dbrown-terraform-state-bucket \
@@ -24,7 +26,9 @@ aws s3api put-bucket-encryption \
     }]
   }'
 
-Use pre-existing security group, VPC and subnets:
+## Terraform configuration
+
+Use pre-existing AWS security group, VPC and subnets:
 
 Security group 
 
@@ -38,9 +42,13 @@ Subnets
 
 https://eu-west-2.console.aws.amazon.com/vpcconsole/home?region=eu-west-2#subnets:
 
-ECR
+## ECR to store the Docker images
 
-Create ECR repository at https://eu-west-2.console.aws.amazon.com/ecr/private-registry/repositories/create?region=eu-west-2
+Create an ECR repository at https://eu-west-2.console.aws.amazon.com/ecr/private-registry/repositories/create?region=eu-west-2
 
-URL:
+Example URL:
 https://746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform-app
+
+## Appendix
+
+https://medium.com/@pavankalyanmeda5779/deploying-a-node-js-app-on-aws-ecs-fargate-with-terraform-and-github-actions-b6463d4a07fe
