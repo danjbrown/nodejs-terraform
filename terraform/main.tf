@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "dbrown-terraform-state-bucket"
-    key    = "ecs/nodejs-terraform-app/terraform.tfstate"
+    key    = "ecs/nodejs-terraform/terraform.tfstate"
     region = "eu-west-2"
   }
 }
@@ -44,7 +44,7 @@ resource "aws_ecs_task_definition" "task" {
   container_definitions = jsonencode([
     {
       name          = var.app_name
-      image         = "746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform-app:latest"
+      image         = "746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform:latest"
       essential     = true
       portMappings  = [
         {

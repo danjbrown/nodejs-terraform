@@ -47,8 +47,8 @@ https://eu-west-2.console.aws.amazon.com/vpcconsole/home?region=eu-west-2#subnet
 Create an ECR repository at https://eu-west-2.console.aws.amazon.com/ecr/private-registry/repositories/create?region=eu-west-2
 
 Example URL:
-https://746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform-app
+https://746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform
 
-## Appendix
+## References
 
 https://medium.com/@pavankalyanmeda5779/deploying-a-node-js-app-on-aws-ecs-fargate-with-terraform-and-github-actions-b6463d4a07fe
