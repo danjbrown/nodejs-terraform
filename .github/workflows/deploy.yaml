@@ -51,8 +51,8 @@ jobs:
 
       - name: Keep App Running
         run: |
-          echo "Keeping app alive for 2 minutes..."
-          sleep 120
+          echo "Keeping app alive for 5 minutes..."
+          sleep 300
 
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
