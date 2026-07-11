@@ -49,6 +49,30 @@ Create an ECR repository at https://eu-west-2.console.aws.amazon.com/ecr/private
 Example URL:
 https://746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform
 
+## Add at line 37 in main.tf
+
+resource "aws_ecs_task_definition" "task" {
+  family                   = var.app_name
+  network_mode             = "awsvpc"
+  cpu                      = "256"
+  memory                   = "512"
+  execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
+
+  container_definitions = jsonencode([
+    {
+      name          = var.app_name
+      image         = "746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform:latest"
+      essential     = true
+      portMappings  = [
+        {
+          containerPort = 3000
+          hostPort      = 3000
+        }
+      ]
+    }
+  ])
+}
+
 ## References
 
 https://medium.com/@pavankalyanmeda5779/deploying-a-node-js-app-on-aws-ecs-fargate-with-terraform-and-github-actions-b6463d4a07fe
