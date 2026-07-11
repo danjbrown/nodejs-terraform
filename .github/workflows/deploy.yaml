@@ -49,6 +49,11 @@ jobs:
         run: terraform apply -auto-approve
         working-directory: ./terraform
 
+      - name: Keep App Running
+        run: |
+          echo "Keeping app alive for 2 minutes..."
+          sleep 120
+
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
         working-directory: ./terraform
