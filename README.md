@@ -19,6 +19,17 @@ AWS_DEFAULT_REGION
 AWS_SECRET_ACCESS_KEY
 ```
 
+## Security Group Inbound Rules
+
+The security group you select when creating a service with your task definition must have port 80 open for inbound traffic. Add the following inbound rule to your security group:
+
+Type: HTTP
+Protocol: TCP
+Port range: 80
+Source: Anywhere (0.0.0.0/0)
+
+See https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-fargate.html
+
 ##  Create an S3 bucket for Terraform state storage
 
 ```
@@ -64,7 +75,7 @@ Also configure the ECR URI in the "aws_ecs_task_definition" entry at /terraform/
 container_definitions = jsonencode([
     {
       name = var.app_name
-      image = "123456789.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform:latest"
+      image = "746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform:latest"
       ...
     }
   ])
