@@ -28,6 +28,8 @@ Protocol: TCP
 Port range: 80
 Source: Anywhere (0.0.0.0/0)
 
+![alt text](image.png)
+
 See https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-fargate.html
 
 ##  Create an S3 bucket for Terraform state storage
@@ -91,14 +93,9 @@ Use your pre-existing AWS security group, VPC and subnets for the specified regi
 
 Configure these in /terraform/terraform.tfvars
 
-## Open Issues
+## Deploy
 
-1. The application does not load at the load balancer URL.
-Go to VPC -> Security Groups -> select the used security group and add a new inbound rule type of HTTP, source Anywhere-IPv4 so the public load balancer URL works.
-
-![alt text](image.png)
-
-https://stackoverflow.com/questions/57318483/task-running-in-fargate-is-not-found-with-public-ip-address
+Run the "Deploy to ECS" action at https://github.com/danjbrown/nodejs-terraform/actions/workflows/deploy.yaml
 
 ## Useful URLs
 
