@@ -23,10 +23,12 @@ AWS_SECRET_ACCESS_KEY
 
 The security group you select when creating a service with your task definition must have port 80 open for inbound traffic. Add the following inbound rule to your security group:
 
+```
 Type: HTTP
 Protocol: TCP
 Port range: 80
 Source: Anywhere (0.0.0.0/0)
+```
 
 ![alt text](image.png)
 
