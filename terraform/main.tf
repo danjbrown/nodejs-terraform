@@ -66,7 +66,7 @@ resource "aws_ecs_service" "service" {
   network_configuration {
     subnets         = var.subnet_ids
     assign_public_ip = true
-    security_groups = ["sg-0466a68adada89755"]
+    security_groups = ["sg-0dac8934d1c747f71"]
   }
 
   load_balancer {
@@ -80,7 +80,7 @@ resource "aws_lb" "app_lb" {
   name               = "${var.app_name}-lb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-0466a68adada89755"]
+  security_groups    = ["sg-0dac8934d1c747f71"]
   subnets            = var.subnet_ids
 }
 
