@@ -100,6 +100,6 @@ Go to VPC -> Security Groups -> select the used security group and add a new inb
 
 https://stackoverflow.com/questions/57318483/task-running-in-fargate-is-not-found-with-public-ip-address
 
-## Source
+## Useful URLs
 
 https://medium.com/@pavankalyanmeda5779/deploying-a-node-js-app-on-aws-ecs-fargate-with-terraform-and-github-actions-b6463d4a07fe
