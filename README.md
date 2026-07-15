@@ -23,15 +23,14 @@ Region: us-east-1 (London)
 
 ```
 aws s3api create-bucket  \
-  --bucket dbrown-terraform-state-bucket \
-  --create-bucket-configuration LocationConstraint=us-east-1
+  --bucket dbrown1-terraform-state-bucket
 
 aws s3api put-bucket-versioning \
-  --bucket dbrown-terraform-state-bucket \
+  --bucket dbrown1-terraform-state-bucket \
   --versioning-configuration Status=Enabled
 
 aws s3api put-bucket-encryption \
-  --bucket dbrown-terraform-state-bucket \
+  --bucket dbrown1-terraform-state-bucket \
   --server-side-encryption-configuration '{
     "Rules": [{
       "ApplyServerSideEncryptionByDefault": {

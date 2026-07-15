@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "dbrown-terraform-state-bucket"
+    bucket = "dbrown1-terraform-state-bucket"
     key    = "ecs/nodejs-terraform/terraform.tfstate"
     region = "us-east-1"
   }
