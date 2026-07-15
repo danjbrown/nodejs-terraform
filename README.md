@@ -93,9 +93,15 @@ Use your pre-existing AWS security group, VPC and subnets for the specified regi
 
 Configure these in /terraform/terraform.tfvars
 
+See the above information about security group inbound rules.
+
 ## Deploy
 
 Run the "Deploy to ECS" action at https://github.com/danjbrown/nodejs-terraform/actions/workflows/deploy.yaml
+
+## Load app in a browser
+
+Navigate to EC2 -> Load balancers -> nodejs-terraform and open the DNS name in a browser.
 
 ## Useful URLs
 
