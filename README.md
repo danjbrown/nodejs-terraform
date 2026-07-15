@@ -27,10 +27,8 @@ The security group you select when creating a service with your task definition 
 Type: HTTP
 Protocol: TCP
 Port range: 80
-Source: Anywhere (0.0.0.0/0)
+Source: Anywhere-IPv4 (0.0.0.0/0)
 ```
-
-![alt text](image.png)
 
 See https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-fargate.html
 
