@@ -83,9 +83,11 @@ Configure these in /terraform/terraform.tfvars
 ## Open Issues
 
 1. The application does not load at the load balancer URL.
-Add a new inbound rule type of HTTP, source Anywhere-IPv4 so the public load balancer URL works.
+Go to VPC -> Security Groups -> select the used security group and add a new inbound rule type of HTTP, source Anywhere-IPv4 so the public load balancer URL works.
 
 ![alt text](image.png)
+
+https://stackoverflow.com/questions/57318483/task-running-in-fargate-is-not-found-with-public-ip-address
 
 ## Source
 
