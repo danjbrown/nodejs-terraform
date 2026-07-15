@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "dbrown1-terraform-state-bucket"
+    bucket = "dbrown-terraform-state-bucket"
     key    = "ecs/nodejs-terraform/terraform.tfstate"
-    region = "us-east-1"
+    region = "eu-west-2"
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_ecs_task_definition" "task" {
   container_definitions = jsonencode([
     {
       name          = var.app_name
-      image         = "public.ecr.aws/u8p8z3z3/eks-nodejs-app:latest"
+      image         = "public.ecr.aws/u8p8z3z3/nodejs-terraform:latest"
       essential     = true
       portMappings  = [
         {
@@ -66,7 +66,7 @@ resource "aws_ecs_service" "service" {
   network_configuration {
     subnets         = var.subnet_ids
     assign_public_ip = true
-    security_groups = ["sg-0dac8934d1c747f71"]
+    security_groups = ["sg-0466a68adada89755"]
   }
 
   load_balancer {
@@ -80,7 +80,7 @@ resource "aws_lb" "app_lb" {
   name               = "${var.app_name}-lb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-0dac8934d1c747f71"]
+  security_groups    = ["sg-0466a68adada89755"]
   subnets            = var.subnet_ids
 }
 
