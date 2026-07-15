@@ -8,7 +8,7 @@ Copy the access key and secret to GitHub at:
 Secrets and variables -> Actions -> Repository secrets
 
 AWS_ACCESS_KEY_ID
-AWS_DEFAULT_REGION (eu-west-2)
+AWS_DEFAULT_REGION (us-east-1)
 AWS_SECRET_ACCESS_KEY
 
 Keep a copy of the access key and secret, then use them to authenticate using the CLI:
@@ -17,14 +17,14 @@ Keep a copy of the access key and secret, then use them to authenticate using th
 aws configure
 ```
 
-Region: eu-west-2 (London)
+Region: us-east-1 (London)
 
 ##  Create an S3 bucket for Terraform state storage
 
 ```
 aws s3api create-bucket  \
   --bucket dbrown-terraform-state-bucket \
-  --create-bucket-configuration LocationConstraint=eu-west-2
+  --create-bucket-configuration LocationConstraint=us-east-1
 
 aws s3api put-bucket-versioning \
   --bucket dbrown-terraform-state-bucket \
@@ -43,9 +43,9 @@ aws s3api put-bucket-encryption \
 
 ## Create an ECR to store the Docker images
 
-Create an ECR repository at https://eu-west-2.console.aws.amazon.com/ecr/private-registry/repositories/create?region=eu-west-2
+Create an ECR repository at https://us-east-1.console.aws.amazon.com/ecr/private-registry/repositories/create?region=us-east-1
 
-Example URL: https://746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform
+Example URL: https://746867312608.dkr.ecr.us-east-1.amazonaws.com/nodejs-terraform
 
 ## Terraform configuration
 
@@ -53,15 +53,15 @@ Use pre-existing AWS security group, VPC and subnets:
 
 ### Security group 
 
-https://eu-west-2.console.aws.amazon.com/vpcconsole/home?region=eu-west-2#securityGroups:
+https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#securityGroups:
 
 ### VPC
 
-https://eu-west-2.console.aws.amazon.com/vpcconsole/home?region=eu-west-2#vpcs:
+https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs:
 
 ### Subnets
 
-https://eu-west-2.console.aws.amazon.com/vpcconsole/home?region=eu-west-2#subnets:
+https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#subnets:
 
 ## References
 

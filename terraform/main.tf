@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "dbrown-terraform-state-bucket"
     key    = "ecs/nodejs-terraform/terraform.tfstate"
-    region = "eu-west-2"
+    region = "us-east-1"
   }
 }
 

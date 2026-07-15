@@ -1,4 +1,4 @@
-region = "eu-west-2"
+region = "us-east-1"
 ecs_cluster_name = "nodejs-terraform"
 app_name = "nodejs-terraform"
 vpc_id = "vpc-07428f604a29bec79"
