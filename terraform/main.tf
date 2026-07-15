@@ -44,7 +44,7 @@ resource "aws_ecs_task_definition" "task" {
   container_definitions = jsonencode([
     {
       name          = var.app_name
-      image         = "746867312608.dkr.ecr.eu-west-2.amazonaws.com/nodejs-terraform:latest"
+      image         = "public.ecr.aws/u8p8z3z3/eks-nodejs-app:latest"
       essential     = true
       portMappings  = [
         {
